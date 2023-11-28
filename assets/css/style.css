@@ -1599,6 +1599,10 @@ section {
   color: #444444;
 }
 
+.copyright{
+  color: #fff;
+}
+
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
@@ -1615,7 +1619,7 @@ section {
 }
 
 #footer .social-links a:hover {
-  background: #3194db;
+  background: #001B7A;
   color: #fff;
   text-decoration: none;
 }
