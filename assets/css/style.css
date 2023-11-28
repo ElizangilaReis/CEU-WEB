@@ -75,7 +75,7 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #10A3DA;
+  border: 6px solid #001B7A;
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
@@ -436,7 +436,7 @@ h6 {
 }
 
 #hero .btn-get-started:hover {
-  background: #3194db;
+  background: #001B7A;
 }
 
 #hero .icon-boxes {
@@ -474,7 +474,9 @@ h6 {
 #hero .icon-box .icon {
   margin-bottom: 20px;
   padding-top: 10px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease-in-out;
   font-size: 36px;
   line-height: 1;
@@ -549,8 +551,9 @@ section {
 
 .section-title p {
   margin-bottom: 0;
-  font-size: 14px;
-  color: #919191;
+  font-size: 18px;
+  color: #343a40;
+  text-align: justify;
 }
 
 /*--------------------------------------------------------------
@@ -797,7 +800,7 @@ section {
 }
 
 .clients img {
-  max-width: 45%;
+  max-width: 80%;
   transition: all 0.4s ease-in-out;
   display: inline-block;
   padding: 15px 0;
@@ -811,7 +814,7 @@ section {
 
 @media (max-width: 768px) {
   .clients img {
-    max-width: 40%;
+    max-width: 80%;
   }
 }
 
