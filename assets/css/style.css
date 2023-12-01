@@ -413,12 +413,14 @@ h6 {
   line-height: 72px;
   color: #001B7A;
   font-family: "Poppins", sans-serif;
+  text-align: justify;
 }
 
 #hero h2 {
   color: #5e5e5e;
   margin: 10px 0 0 0;
   font-size: 22px;
+  text-align: justify;
 }
 
 #hero .btn-get-started {
@@ -515,11 +517,13 @@ h6 {
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
+    text-align: justify;
   }
 
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
+    text-align: justify;
   }
 }
 
