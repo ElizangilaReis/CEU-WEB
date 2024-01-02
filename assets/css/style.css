@@ -1,4 +1,4 @@
-
+.play-btn:hover::before
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -387,7 +387,7 @@ h6 {
   width: 100%;
   height: 100vh;
   position: relative;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("../img/hero-ceu2.jpg") top center;
   background-size: cover;
   position: relative;
 }
@@ -419,6 +419,10 @@ h6 {
   color: #5e5e5e;
   margin: 10px 0 0 0;
   font-size: 22px;
+}
+
+#cmd a{
+  color: #001B7A;
 }
 
 #hero .btn-get-started {
