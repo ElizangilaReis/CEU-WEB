@@ -85,7 +85,7 @@
       </div>
       <div class="justify-content-center justify-content-lg-start mobile">
         <a href="#about" class="btn-get-started mobile2">Saiba mais</a>
-        <a href="https://forms.gle/DjBRXtj4wPFB4kk88" class="btn-get-started"><span>Inscreva-se</span></a>
+        <a href="https://forms.gle/DjBRXtj4wPFB4kk88" target="_blank" class="btn-get-started"><span>Inscreva-se</span></a>
       </div>
 
     </div>
@@ -101,7 +101,7 @@
 
         <div class="section-title">
           <h2>CEU</h2>
-          <p>O cartão de estudante universitário, é uma plataforma de inclusão
+          <p>O Cartão de Estudante Universitário Nacional, é uma plataforma de inclusão
             financeira para os estudantes de angola, com suporte físico de um único
             cartão com três funcionalidades:<br><br>
             1- Cartão de estudante. <br>
@@ -730,7 +730,7 @@
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Inscreva-se em nossa newsletter</h4>
-            <form action="forms/test.php" method="post">
+            <form id="newsletterForm" action="forms/test.php" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
@@ -765,6 +765,31 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script>
+    document.getElementById("newsletterForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita que o formulário seja enviado diretamente
+        
+        var formData = new FormData(this);
+        
+        fetch(this.action, {
+            method: this.method,
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                alert("Registro salvo com sucesso.");
+                this.reset(); // Limpa o formulário após o sucesso
+            } else {
+                alert("Ocorreu um erro ao salvar o registro.");
+            }
+        })
+        .catch(error => {
+            console.error("Erro:", error);
+            alert("Ocorreu um erro ao salvar o registro.");
+        });
+    });
+    </script>
 
   
   <script src="assets/js/main.js"></script>
