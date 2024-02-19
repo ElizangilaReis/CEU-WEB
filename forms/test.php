@@ -6,7 +6,6 @@ $hostname="localhost";
 $username="ceuao_ereis";
 $password="Elsamaria12!";
 $dbname="ceuao_USER";
-$usertable="Newslatter";
 
 $conn = mysqli_connect(hostname: $hostname, username: $username, password: $password, database: $dbname);
 
@@ -14,7 +13,7 @@ if(mysqli_connect_errno()){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO $usertable (email) VALUES (?)";
+$sql = "INSERT INTO Newslatter (email) VALUES (?)";
 
 $stmt = mysqli_stmt_init($conn);
 
