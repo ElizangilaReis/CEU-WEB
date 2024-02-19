@@ -1,6 +1,6 @@
 <?php
 
-$Email = ($_POST["email"]);
+$email = $_POST["email"];
 
 $hostname="localhost";
 $username="ceuao_ereis";
@@ -8,23 +8,24 @@ $password="Elsamaria12!";
 $dbname="ceuao_USER";
 $usertable="Newslatter";
 
-$link = mysqli_connect($hostname, $username, $password, $dbname);
+$conn = mysqli_connect(hostname: $hostname, username: $username, password: $password, database: $dbname);
 
-if($link === false){
+if(mysqli_connect_errno()){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO $usertable (email) VALUES ('$Email')";
+$sql = "INSERT INTO $usertable (email) VALUES (?)";
 
-if(mysqli_query($link, $sql)){
+$stmt = mysqli_stmt_init($conn);
 
-    echo "Records added successfully.";
-
-} else{
-
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($$link);
-
+if( ! mysqli_stmt_prepare($stmt, $sql)){
+    die(mysqli_error($conn));
 }
 
-mysqli_close($link);
+mysqli_stmt_bind_param($stmt, "s", $email);
+
+mysqli_stmt_execute($stmt);
+
+echo "Record saved. ";
+
 ?>
