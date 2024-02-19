@@ -2,7 +2,7 @@
 
 $Email = ($_POST["email"]);
 
-$hostname="Localhost";
+$hostname="localhost";
 $username="ceuao_ereis";
 $password="Elsamaria12!";
 $dbname="ceuao_USER";
