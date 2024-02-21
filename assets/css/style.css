@@ -91,6 +91,72 @@ h6 {
   opacity: 1;
 }
 
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs .page-header {
+  padding: 140px 0 80px 0;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.breadcrumbs .page-header:before {
+  content: "";
+  background-color: rgba(14, 29, 52, 0.8);
+  position: absolute;
+  inset: 0;
+}
+
+.breadcrumbs .page-header h2 {
+  font-size: 56px;
+  font-weight: 500;
+  color: #fff;
+  font-family: var(--font-secondary);
+}
+
+.breadcrumbs .page-header p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.breadcrumbs nav {
+  background-color: #f3f6fc;
+  padding: 20px 0;
+}
+
+.breadcrumbs nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.breadcrumbs nav ol a {
+  color: var(--color-primary);
+  transition: 0.3s;
+}
+
+.breadcrumbs nav ol a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs nav ol li+li {
+  padding-left: 10px;
+}
+
+.breadcrumbs nav ol li+li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #4278cc;
+  content: "/";
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -1268,50 +1334,37 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact .info {
-  width: 100%;
-  background: #fff;
+.contact .info-item+.info-item {
+  margin-top: 40px;
 }
 
-.contact .info i {
+.contact .info-item i {
   font-size: 20px;
-  color: #10A3DA;
-  float: left;
+  background: #001B7A;
+  color: #fff;
   width: 44px;
   height: 44px;
-  background: #e3f0fa;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 4px;
   transition: all 0.3s ease-in-out;
+  margin-right: 15px;
 }
 
-.contact .info h4 {
-  padding: 0 0 0 60px;
-  font-size: 22px;
+.contact .info-item h4 {
+  padding: 0;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 5px;
   color: #001B7A;
 }
 
-.contact .info p {
-  padding: 0 0 0 60px;
+.contact .info-item p {
+  padding: 0;
   margin-bottom: 0;
   font-size: 14px;
-  color: #217bbc;
-}
-
-.contact .info .email,
-.contact .info .phone {
-  margin-top: 40px;
-}
-
-.contact .info .email:hover i,
-.contact .info .address:hover i,
-.contact .info .phone:hover i {
-  background: #10A3DA;
-  color: #fff;
+  color: rgba(14, 29, 52, 0.8);
 }
 
 .contact .php-email-form {
@@ -1326,7 +1379,7 @@ section {
 .contact .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #ed3c0d;
+  background: #df1529;
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -1339,7 +1392,7 @@ section {
 .contact .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #18d26e;
+  background: #059652;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1359,22 +1412,16 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
+  border: 3px solid #059652;
+  border-top-color: #fff;
   animation: animate-loading 1s linear infinite;
 }
 
 .contact .php-email-form input,
 .contact .php-email-form textarea {
-  border-radius: 0;
+  border-radius: 4px;
   box-shadow: none;
   font-size: 14px;
-  border-radius: 4px;
-}
-
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
-  border-color: #10A3DA;
 }
 
 .contact .php-email-form input {
@@ -1386,16 +1433,16 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #10A3DA;
+  background: #001B7A;
   border: 0;
-  padding: 10px 30px;
+  padding: 10px 35px;
   color: #fff;
   transition: 0.4s;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #3194db;
+  background: #10A3DA;
 }
 
 @keyframes animate-loading {
@@ -1407,6 +1454,7 @@ section {
     transform: rotate(360deg);
   }
 }
+
 
 /*--------------------------------------------------------------
 # Breadcrumbs
