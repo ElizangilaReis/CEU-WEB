@@ -141,7 +141,8 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="https://api.web3forms.com/submit" method="POST" role="form" class="php-email-form">
+              <input type="hidden" name="access_key" value="1ae697fb-830f-4761-968b-d6cca662dabe">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
@@ -273,6 +274,42 @@
             alert("Ocorreu um erro ao salvar o registro.");
         });
     });
+    </script>
+
+    <script>
+      // Selecione o formulário
+      var form = document.querySelector('.php-email-form');
+
+      // Adicione um evento de envio ao formulário
+      form.addEventListener('submit', function(event) {
+        // Impede o envio padrão do formulário
+        event.preventDefault();
+
+        // Faça uma requisição AJAX para enviar o formulário
+        var formData = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open(form.method, form.action);
+        xhr.setRequestHeader('Accept', 'application/json');
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+          if (xhr.status === 200) {
+            // Se a solicitação foi bem-sucedida
+            var response = JSON.parse(xhr.responseText);
+            if (response.success) {
+              // Se o email foi enviado com sucesso
+              form.querySelector('.sent-message').style.display = 'block';
+              form.reset();
+            } else {
+              // Se houve algum erro no envio
+              form.querySelector('.error-message').style.display = 'block';
+            }
+          } else {
+            // Se houve um erro na requisição AJAX
+            console.error('Ocorreu um erro durante a requisição AJAX.');
+          }
+        };
+        xhr.send(formData);
+      });
     </script>
 
   
