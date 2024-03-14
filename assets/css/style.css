@@ -570,17 +570,11 @@ h6 {
 
 @media (max-width: 640px) {
   #hero {
-    background: url("../img/banner42\ mobile.png") center;
-    background-size: cover;
     text-align: center;
   }
 
   #hero .mobile {
     margin-top: 150px;
-  }
-
-  #hero .mobile2 {
-    display: none;
   }
 
   #hero h2 {
