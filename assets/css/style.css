@@ -1039,6 +1039,11 @@ section {
   margin-bottom: 0;
 }
 
+.col-md-5{
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; 
+}
 
 /*--------------------------------------------------------------
 # Team
